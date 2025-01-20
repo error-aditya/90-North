@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="frontend_development.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+        </ul>
+        <button onclick="toggleMenu()" style="float: right;">Toggle Menu</button>
+    </div>
+
+    <div class="container">
+        <div class="left-menu" id="leftMenu">
+            <ul>
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <section id="objective">
+                <h1>Objective</h1>
+                <p>I am looking for an opportunity to use my skills and abilities to have a positive result to the work. I am ready to learn new things. I like to lead as I have leadership skills and understandability.</p>
+            </section>
+
+            <section id="education">
+                <h1>Education</h1>
+                <ul>
+                    <li>Master of Computer Application, GLS University, Ahmedabad (2023-25)</li>
+                    <li>Bachelor in Computer Application, GLS University, Ahmedabad (2020-23)</li>
+                    <li>SSC, Class X & HSC, Class XII, Sheth.C.N.Vidyalaya (2018 & 2020)</li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h1>Projects</h1>
+                <ul>
+                    <li>
+                        <strong>Multi Vehicle Rental System:</strong> This app focuses on renting vehicles like cars, bikes, luxury cars, and heavy vehicles.
+                        <br>Technologies: Flutter, Firebase
+                    </li>
+                    <li>
+                        <strong>Online Music Player System (A-Music):</strong> A music player system using Spotify API with "nocodeapi."
+                        <br>Technologies: React.js
+                    </li>
+                    <li>
+                        <strong>Invoice System of Employee:</strong> Provides companies and clients with a record of work done.
+                        <br>Technologies: React.js, Google Firebase
+                    </li>
+                    <li>
+                        <strong>e-Vigilance Complaint System (Techathon):</strong> A system to fight corruption and spread awareness.
+                        <br>Technologies: PHP, MySQL, HTML/CSS
+                    </li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h1>Technical Skills</h1>
+                <p>HTML, CSS, Python, MySQL, OOPS, Flutter, Firebase, React.js, C/C++</p>
+
+                <h1>Professional Skills</h1>
+                <p>Team-leading, Teamwork, Good Communication</p>
+            </section>
+
+            <section id="certificates">
+                <h1>Certificates</h1>
+                <ul>
+                    <li>Diploma Programme in Strategic Management & HRM</li>
+                    <li>Full Stack Development Course (UDEMY, ongoing)</li>
+                    <li>Techathon - Cyber Shadez</li>
+                    <li>IT Treasure Hunt - Cyber Shadez (Final Round)</li>
+                    <li>IT Quiz - Cyber Shadez (Final Round)</li>
+                </ul>
+            </section>
+
+            <section id="hobbies">
+                <h1>Hobbies</h1>
+                <p>Playing Cricket and Football, Playing Online Multiplayer Games, Theatre (Drama), Self-Improvement</p>
+            </section>
+        </div>
+
+        <div class="right-panel">
+            <ul>
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Contact Me</h2>
+        <p>Email: rajputadityak69@gmail.com</p>
+        <p>Phone: +91 7984765509</p>
+        <p>Location: Ahmedabad, Gujarat</p>
+
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('leftMenu');
+            menu.classList.toggle('collapsed');
+        }
+
+        function adjustScale() {
+            const width = window.innerWidth;
+            let scale = 1;
+
+            if (width <= 600) {
+                scale = 0.5;
+            } else if (width > 600 && width <= 700) {
+                scale = 0.75;
+            } else if (width > 700 && width <= 767) {
+                scale = 0.8;
+            } else if (width >= 992 && width <= 1600) {
+                scale = 0.9;
+            }
+
+            document.body.style.transform = `scale(${scale})`;
+            document.body.style.transformOrigin = "top";
+        }
+
+        window.addEventListener('resize', adjustScale);
+        window.addEventListener('load', adjustScale);
+    </script>
+</body>
+</html>

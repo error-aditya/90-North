@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.navbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 60px; /* Height of navbar */
+}
+
+.left-menu {
+    background: linear-gradient(to bottom, #d3cce3, #e9e4f0);
+    padding: 1rem;
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-menu.collapsed {
+    transform: translateX(-100%);
+}
+
+.left-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-menu ul li {
+    margin: 10px 0;
+}
+
+.left-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.left-menu ul li a:hover {
+    background-color: #6a11cb;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.right-panel {
+    background: linear-gradient(to bottom, #f6d365, #fda085);
+    padding: 1rem;
+    width: 200px;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer h2 {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.footer .contact-form input,
+.footer .contact-form textarea {
+    width: 80%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.footer .contact-form input:focus,
+.footer .contact-form textarea:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+.footer button {
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 11.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer button:hover {
+    background-color: #ff7e5f;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .right-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+    }
+
+    .navbar {
+        font-size: 0.9rem;
+    }
+
+    .left-menu {
+        width: 100%;
+        transform: translateX(0);
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+}
